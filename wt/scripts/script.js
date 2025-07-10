@@ -95,7 +95,7 @@ checkoutBtn.addEventListener('click', () => {
   }
   const total = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
   if (confirm(`Total: $${total.toFixed(2)}. Confirm purchase?`)) {
-    fetch('/php-practice/wtProject/ecommerce-site/wt/pages/checkout.php', {
+    fetch('/php-practice/wt_project/wt/pages/checkout.php', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ cart })

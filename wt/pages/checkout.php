@@ -39,3 +39,4 @@ if (mysqli_query($conn, $sql)) {
 } else {
     echo json_encode(['success' => false, 'message' => 'Order not saved.']);
 }
+?>
