@@ -153,10 +153,6 @@
             echo "<span class='info-label'>Email:</span>";
             echo "<span class='info-value'>" . $user['email'] . "</span>";
             echo "</div>";
-            echo "<div class='info-item'>";
-            echo "<span class='info-label'>Member Since:</span>";
-            echo "<span class='info-value'>" . date('F Y', strtotime($user['created_at'] ?? 'now')) . "</span>";
-            echo "</div>";
             echo "</div>";
 
             echo "<div class='buttons'>";

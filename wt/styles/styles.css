@@ -1,15 +1,35 @@
-/* my basic styles */
+/*
+====================================
+E-TECH WEBSITE - MAIN STYLES
+====================================
+
+This file contains all the styling for the E-Tech e-commerce website.
+It includes layouts, colors, typography, and responsive design.
+
+SECTIONS INCLUDED:
+- CSS Variables (color scheme)
+- Reset styles
+- Navigation bar
+- Hero section
+- Product cards
+- Footer
+- Responsive design
+====================================
+*/
+
+/* CSS VARIABLES: Define color scheme for consistent theming */
 :root {
-  --primary-color: #3498db;
-  --secondary-color: #2980b9;
-  --dark-color: #2c3e50;
-  --light-color: #ecf0f1;
-  --gray-color: #95a5a6;
-  --success-color: #2ecc71;
-  --danger-color: #e74c3c;
-  --warning-color: #f39c12;
+  --primary-color: #3498db;      /* Main blue color */
+  --secondary-color: #2980b9;    /* Darker blue */
+  --dark-color: #2c3e50;         /* Dark text color */
+  --light-color: #ecf0f1;        /* Light background */
+  --gray-color: #95a5a6;         /* Gray accents */
+  --success-color: #2ecc71;      /* Green for success */
+  --danger-color: #e74c3c;       /* Red for errors */
+  --warning-color: #f39c12;      /* Orange for warnings */
 }
 
+/* RESET STYLES: Remove default browser styling */
 * {
   margin: 0;
   padding: 0;
@@ -697,6 +717,8 @@ footer {
   padding: 5px 10px;
   border-radius: 5px;
   transition: background-color 0.3s;
+  text-decoration: none;
+  color: inherit;
 }
 
 .user-dropdown .user-icon:hover {
