@@ -3,12 +3,11 @@ session_start();
 include '../database/dbconnect.php';
 
 $error_message = '';
-$success_message = '';
 
-// log in when form is sent
+// Handle login when form is submitted
 if (isset($_POST['login'])) {
     $email = mysqli_real_escape_string($conn, $_POST['email']);
-    $password = md5($_POST['password']);
+    $password = md5($_POST['password']); // Simple MD5 hashing
 
     $sql = "SELECT * FROM users WHERE email = '$email'";
     $result = mysqli_query($conn, $sql);
@@ -21,10 +20,10 @@ if (isset($_POST['login'])) {
             header("Location: ../index.php");
             exit();
         } else {
-            $error_message = "Wrong email or password";
+            $error_message = "Invalid email or password";
         }
     } else {
-        $error_message = "Wrong email or password";
+        $error_message = "Invalid email or password";
     }
 }
 ?>

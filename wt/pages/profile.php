@@ -126,18 +126,19 @@
         include '../database/dbconnect.php';
 
         if (isset($_SESSION['user_id'])) {
-            $user_id = $_SESSION['user_id'];
-            $sql = "SELECT * FROM users WHERE id = '$user_id'";
+            $user_id = intval($_SESSION['user_id']);
+            $sql = "SELECT * FROM users WHERE id = $user_id";
             $result = mysqli_query($conn, $sql);
             $user = mysqli_fetch_assoc($result);
 
-            $initials = strtoupper(substr($user['first_name'], 0, 1) . substr($user['last_name'], 0, 1));
-            
-            echo "<div class='profile-header'>";
-            echo "<div class='profile-avatar'>" . $initials . "</div>";
-            echo "<h1>Welcome, " . $user['first_name'] . "!</h1>";
-            echo "<p style='color: #6c757d;'>Manage your account and view your information</p>";
-            echo "</div>";
+            if ($user) {
+                $initials = strtoupper(substr($user['first_name'], 0, 1) . substr($user['last_name'], 0, 1));
+                
+                echo "<div class='profile-header'>";
+                echo "<div class='profile-avatar'>" . $initials . "</div>";
+                echo "<h1>Welcome, " . $user['first_name'] . "!</h1>";
+                echo "<p style='color: #6c757d;'>Manage your account and view your information</p>";
+                echo "</div>";
             
             echo "<div class='profile-info'>";
             echo "<h3>Personal Information</h3>";
@@ -171,7 +172,8 @@
             echo "</div>";
             echo "<button><a href='login.php' style='color: white; text-decoration: none;'>Login Now</a></button>";
         }
-        ?>
+    }
+    ?>
     </div>
 
 

@@ -5,29 +5,27 @@ $show_navbar = true;
 $error_message = '';
 $success_message = '';
 
-// handle registration when form is submitted
+// Handle registration when form is submitted
 if (isset($_POST['register'])) {
-    $username = $_POST['username'];
-    $email = $_POST['email'];
-    $password = $_POST['password'];
-    $confirm_password = $_POST['confirm_password'];
-    $first_name = $_POST['first_name'];
-    $last_name = $_POST['last_name'];
+    $username = mysqli_real_escape_string($conn, $_POST['username']);
+    $email = mysqli_real_escape_string($conn, $_POST['email']);
+    $password = md5($_POST['password']); // Simple MD5 hashing
+    $confirm_password = md5($_POST['confirm_password']);
+    $first_name = mysqli_real_escape_string($conn, $_POST['first_name']);
+    $last_name = mysqli_real_escape_string($conn, $_POST['last_name']);
     
-    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
         $error_message = "Invalid email format";
     } else if ($password != $confirm_password) {
         $error_message = "Passwords do not match";
     } else {
-        // check if user already exists
-        $check_sql = "SELECT * FROM users WHERE email = '$email'";
+        // Check if user already exists
+        $check_sql = "SELECT * FROM users WHERE email = '$email' OR username = '$username'";
         $check_result = mysqli_query($conn, $check_sql);
-        $num = mysqli_num_rows($check_result);
-
-        if ($num > 0) {
-            $error_message = "Email already exists";
+        
+        if (mysqli_num_rows($check_result) > 0) {
+            $error_message = "Email or username already exists";
         } else {
-            $password = md5($password);
             $sql = "INSERT INTO users (username, email, password, first_name, last_name) VALUES ('$username', '$email', '$password', '$first_name', '$last_name')";
             $result = mysqli_query($conn, $sql);
             

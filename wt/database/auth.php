@@ -18,7 +18,7 @@ if (isset($_POST['register'])) {
 // log out
 if (isset($_GET['logout'])) {
     session_destroy();
-    header("Location: ../index.html");
+    header("Location: ../index.php");
     exit();
 }
 ?>

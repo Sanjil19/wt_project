@@ -28,10 +28,10 @@ $sql = "INSERT INTO orders (user_id, total) VALUES ($user_id, $total)";
 if (mysqli_query($conn, $sql)) {
     $order_id = mysqli_insert_id($conn);
     foreach ($cart as $item) {
-        $pid = $item['id'];
-        $pname = $item['name'];
-        $pprice = $item['price'];
-        $pqty = $item['qty'];
+        $pid = mysqli_real_escape_string($conn, $item['id']);
+        $pname = mysqli_real_escape_string($conn, $item['name']);
+        $pprice = floatval($item['price']);
+        $pqty = intval($item['qty']);
         $sql_item = "INSERT INTO order_items (order_id, product_id, product_name, price, quantity) VALUES ($order_id, '$pid', '$pname', $pprice, $pqty)";
         mysqli_query($conn, $sql_item);
     }

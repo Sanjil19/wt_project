@@ -10,7 +10,7 @@ if (!isset($_SESSION['user_id'])) {
     exit();
 }
 
-$user_id = $_SESSION['user_id'];
+$user_id = intval($_SESSION['user_id']); // Convert to integer
 
 $orders = array();
 $order_items = array();
@@ -26,9 +26,9 @@ if ($result) {
     echo '<div style="color:red;">Could not get orders: ' . mysqli_error($conn) . '</div>';
 }
 
-// Get order items for each order (simple way)
+// Get order items for each order
 foreach ($orders as $order) {
-    $oid = $order['id'];
+    $oid = intval($order['id']);
     $item_sql = "SELECT * FROM order_items WHERE order_id = $oid";
     $item_result = mysqli_query($conn, $item_sql);
     if ($item_result) {

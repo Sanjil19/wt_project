@@ -1,5 +1,5 @@
 <?php
-// basic database connection for my project
+// Simple database connection for the project
 
 $conn = mysqli_connect('localhost', 'root', '', 'etech_store');
 if (!$conn) {
