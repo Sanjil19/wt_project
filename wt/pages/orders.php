@@ -45,6 +45,8 @@ foreach ($orders as $order) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Order History - E-Tech</title>
   <link rel="stylesheet" href="../styles/styles.css" />
+  <link rel="stylesheet" href="../styles/navbar-footer.css" />
+  <link rel="stylesheet" href="../styles/orders.css" />
   <link rel="stylesheet" href="../styles/cart.css" />
   <link href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
 </head>

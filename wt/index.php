@@ -12,6 +12,8 @@ session_start();
   
   <!-- CSS Stylesheets -->
   <link rel="stylesheet" href="styles/styles.css" />
+  <link rel="stylesheet" href="styles/navbar-footer.css" />
+  <link rel="stylesheet" href="styles/index.css" />
   <link rel="stylesheet" href="styles/cart.css" />
   
   <!-- Icon Library - Boxicons for beautiful icons -->

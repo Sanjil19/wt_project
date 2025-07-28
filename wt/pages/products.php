@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Products - E-Tech</title>
   <link rel="stylesheet" href="../styles/styles.css" />
+  <link rel="stylesheet" href="../styles/navbar-footer.css" />
+  <link rel="stylesheet" href="../styles/products.css" />
+  <link rel="stylesheet" href="../styles/cart.css" />
   <link rel="stylesheet" href="../styles/cart.css" />
   <link href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet" />

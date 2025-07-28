@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Profile - E-Tech</title>
     <link rel="stylesheet" href="../styles/styles.css">
+    <link rel="stylesheet" href="../styles/navbar-footer.css">
+    <link rel="stylesheet" href="../styles/profile.css">
     <style>
         .welcome-container {
             max-width: 600px;

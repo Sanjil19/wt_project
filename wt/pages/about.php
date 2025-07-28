@@ -7,6 +7,8 @@
   
   <!-- CSS Stylesheets -->
   <link rel="stylesheet" href="../styles/styles.css" />
+  <link rel="stylesheet" href="../styles/navbar-footer.css" />
+  <link rel="stylesheet" href="../styles/about.css" />
   <link rel="stylesheet" href="../styles/cart.css" />
   
   <!-- Icon Library -->
@@ -39,6 +41,8 @@
       <li>Friendly customer support</li>
     </ul>
   </main>
+  <script src="../scripts/script.js"></script>
+
   
 </body>
 </html>
